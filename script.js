@@ -7,6 +7,7 @@ function createGrid(numPerSide) {
     let squares = numPerSide * numPerSide;
     for (let i = 1; i <= squares; i++) {
         var div = document.createElement('div');
+        div.classList.add('square');
         div.style.backgroundColor = 'white';
         div.style.border = '0.5px solid black';
         div.style.textAlign = 'center';
@@ -14,7 +15,7 @@ function createGrid(numPerSide) {
         container.appendChild(div)
     } 
 
-    var px = 1200 / numPerSide;
+    var px = 1000 / numPerSide;
     container.style.setProperty('grid-template-columns', `repeat(${numPerSide}, ${px}px)`);
     container.style.setProperty('grid-template-rows', `repeat(${numPerSide}, ${px}px)`);
 
@@ -22,4 +23,8 @@ function createGrid(numPerSide) {
 
 createGrid(16);
 
-console.log(container);
+document.querySelectorAll('.square').forEach(div => {
+    div.addEventListener('mouseover', event => {
+        div.style.backgroundColor = 'black';
+    });
+})

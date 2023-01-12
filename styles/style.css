@@ -1,13 +1,14 @@
 #container {
     display: inline-grid;
-    height: min(1200px);
-    width: min(1200px);
+    height: min(1000px);
+    width: min(1000px);
     grid-template-columns: repeat(16, 75px);
     grid-template-rows: repeat(16, 75px);
+    margin: auto;
 }
 
 body {
     display: flex;
-    align-content: center;
-    justify-content: center;
+    min-height:100vh;
+    margin: 0;
 }
